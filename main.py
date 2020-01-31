@@ -7,12 +7,14 @@ def clignote():
     pycom.rgbled(0xff00)
     pycom.heartbeat(False)
     for cycles in range(10): # stop after 10 cycles
-        pycom.rgbled(0x000099) # green
-        pycom.rgbled(0x000000) # yellow
+        pycom.rgbled(0x000099) # blue
+        pycom.rgbled(0x000000) # white
         pycom.rgbled(0xff0000) # red"""
-    for cycles in range(20):
-        pycom.rgbled(0xEE2C2C)
-        time.sleep(0.5)
+    for cycles in range(5):
+        pycom.rgbled(0xEE2C2C) #rouge
+        time.sleep(0.1)
+        pycom.rgbled(0x000000) #eteint
+
 
 
 
@@ -36,7 +38,7 @@ def thermo():
             clignote()
             #pycom.rgbled(0xEE2C2C) #rouge
         print(val)
-        time.sleep(0.2)
+        time.sleep(0.1)
     pycom.heartbeat(False)
     print(val)
 thermo()
